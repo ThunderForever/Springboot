@@ -101,7 +101,13 @@ public class DemoApplication {
 					}
 				}
 				if (stack.size() != 1) {
-					return("The length between "+firstword+" and "+target+" is " + stack.size());
+					String ladder=stack.pop()+"\t";
+					int i=1;
+					while(!stack.isEmpty()){
+						ladder+=(stack.pop()+"\t");
+						i++;
+					}
+					return(ladder+"\n"+"The length between "+firstword+" and "+target+" is " + i);
 
 				} else {
 					return("I'm sorry. The word ladder isn't exist");
